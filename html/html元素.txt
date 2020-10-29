@@ -1,0 +1,18 @@
+1）行内元素
+	行内元素不能设置width，height，可以设置line-height，在文档中所占的位置只是元素本身(元素内容或者padding)的大小。行内元素的上下margin和padding不会对其他元素产生影响，例如在一个没有定义高度的div中有一个上下pandding为200px的span，
+	此时父元素div的高度并不会被撑开。在默认情况下，行内元素中只能嵌套文本以及其他的行内元素，不能嵌套块级元素。可以通过display：block转化成块级元素，通过display：inline-block转化成行内块元素
+	行内元素主要有 span img input sub sup textarea select a b strong button label
+2）块级元素
+	块级元素可以定义width，height，line-height，在所在父元素中独占一行(因为块级元素的默认宽度与父元素一直)，块级元素的上下padding会对其他的元素造成影响，在默认情况下，块级元素中可以嵌套文字、行内元素以及其他的块级元素。可以通过display：		inline-block转化成行内块元素，通过display：inline幻化成行内元素。
+	块级元素主要有 div p ul ol dl li dt dd h1 h2 h3 h4 h5 h6
+3) display:inline-block
+	对内呈现块级元素的特征，对外呈现行内元素的特征 默认情况下不会独占一行 但是可以设置宽高
+4）空元素
+	标签内部没有内容的元素，只包含属性，例如src，特征多为单标签。 例如<br/> <img /> <input /> <hr />(下划线) <link /> <meta />
+5）link标签
+	link标签定义当前文档与外部资源的关系，只能存在于head中，可以理解成把当前文档与一个外部资源连接起来，ref属性表示当前文档与被连接资源之间的关系，例如stylesheet 表示将被连接的资源看成是当前资源的一个css文件，还有一个属性为rev，指反转当前文档和被	连接资源的关系(HTML5不支持)。
+6）link标签与@import的区别
+	1.本质的区别 link属于html的标签，而@import只是css的语法(只能写在style标签中，或者css文件中)
+	2.加载顺序的区别 在浏览器解析html文件是，link加载的css文件会同时被加载，而@import加载的css文件要等到文档加载完毕之后才会加载
+	3.兼容性的区别 css2中才有@import语法（ie5+才能使用） 而link本身就是html标签 不存在兼容性问题
+	4.dom操作控制样式时的区别 在用js控制样式时，我们可以动态的生成link标签引入css，而@import只是css的语法，js并不能控制
