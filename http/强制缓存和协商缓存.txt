@@ -12,4 +12,4 @@
         3.如果有last-modify，则在请求中带上if-modify-since，值为last-modify的值，服务端会对比这两个值，如果相同 返回304 强缓存 如果不同 返回200 新资源 以及最新的last-modify
         4.ETag的优先度是在if-modify-since之上的，是因为last-modify最小粒度为秒，如果在一秒之内变更多次的话，last-modify/if-modify-since是不会起作用的，而ETag为 文件每改变
           一次就会生成一个新的ETag，准确度更高，但从另一方面来说，ETag的性能不如last-modify，因为last-modify只需要记录一个时间就行了，而ETag需要不停生成，有的服务器不支持记录修改
-          时间
+          时间。
